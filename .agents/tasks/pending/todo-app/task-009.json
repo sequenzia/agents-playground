@@ -1,0 +1,49 @@
+{
+  "id": "task-009",
+  "title": "Build App component and compose all features",
+  "active_form": "Building App component and composing all features",
+  "description": "Create the App component that composes TodoInput, TodoList, TodoFooter, and the toast system into the complete application. Wire the useTodos hook to provide state and action functions to all child components. Manage filter state locally with useState (defaulting to 'all', not persisted). Connect toast notifications to destructive and bulk actions (delete, clear completed, toggle all) and localStorage errors from the hook. Apply responsive Tailwind CSS layout with a clean, minimal design centered on the page.\n\nSource: internal/specs/todo-app-SPEC.md Sections 7.1, 9.1",
+  "acceptance_criteria": {
+    "functional": [
+      "App renders TodoInput, TodoList, and TodoFooter components",
+      "useTodos hook provides state and actions to all components",
+      "Filter state managed locally, defaults to 'all' on page load",
+      "Delete action triggers toast notification",
+      "Clear completed action triggers toast with count",
+      "Toggle all action triggers toast notification",
+      "localStorage errors trigger warning toast",
+      "Responsive layout works across viewport sizes"
+    ],
+    "edge_cases": [
+      "Filter state resets to 'all' on page reload",
+      "App handles zero todos gracefully (footer hidden, empty state shown)"
+    ],
+    "error_handling": [
+      "localStorage failures do not crash the app"
+    ],
+    "performance": [
+      "UI interactions feel instant with no perceptible delay"
+    ]
+  },
+  "testing_requirements": [
+    { "type": "component", "target": "App renders all child components" },
+    { "type": "component", "target": "Actions flow from components through hook to state updates" },
+    { "type": "component", "target": "Toast notifications fire for destructive and bulk actions" },
+    { "type": "manual", "target": "Responsive layout verified across viewport sizes" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-003", "task-004", "task-006", "task-007", "task-008"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "critical",
+    "complexity": "M",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:app-integration:compose:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "App Composition",
+    "source_section": "7.1, 9.1",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery"
+  }
+}

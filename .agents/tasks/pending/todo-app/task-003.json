@@ -1,0 +1,47 @@
+{
+  "id": "task-003",
+  "title": "Implement useTodos custom hook with localStorage persistence",
+  "active_form": "Implementing useTodos custom hook with localStorage persistence",
+  "description": "Create the useTodos custom hook that wraps todoReducer with useReducer. On initialization, load persisted todos from localStorage (key: 'todos'). After each state change, sync the updated todos array to localStorage as a side effect using useEffect. Expose dispatch wrapper functions for each action (addTodo, deleteTodo, toggleTodo, editTodo, clearCompleted, toggleAll) and the current todos array. Handle localStorage read/write errors gracefully — if storage is unavailable, the app should still work in-memory and surface an error for the toast system.\n\nSource: internal/specs/todo-app-SPEC.md Section 7.1",
+  "acceptance_criteria": {
+    "functional": [
+      "Hook initializes state from localStorage on mount",
+      "Hook exposes todos array and action functions (addTodo, deleteTodo, toggleTodo, editTodo, clearCompleted, toggleAll)",
+      "State changes sync to localStorage via useEffect",
+      "Todos persist across page reloads"
+    ],
+    "edge_cases": [
+      "localStorage is empty on first load — initializes with empty array",
+      "localStorage contains invalid JSON — falls back to empty array"
+    ],
+    "error_handling": [
+      "localStorage write failure does not crash the app",
+      "localStorage errors are surfaced for toast notification"
+    ],
+    "performance": [
+      "localStorage reads/writes do not block the UI thread"
+    ]
+  },
+  "testing_requirements": [
+    { "type": "unit", "target": "Hook initializes from localStorage correctly" },
+    { "type": "unit", "target": "Action functions dispatch correct reducer actions" },
+    { "type": "unit", "target": "State syncs to localStorage after changes" },
+    { "type": "unit", "target": "Graceful fallback on localStorage errors" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-002"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "critical",
+    "complexity": "M",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:state-management:hook:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "State Management",
+    "source_section": "7.1",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery",
+    "produces_for": ["task-009", "task-011"]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "task-005",
+  "title": "Build TodoItem component with toggle, delete, and inline editing",
+  "active_form": "Building TodoItem component with toggle, delete, and inline editing",
+  "description": "Create the TodoItem component that displays a single todo with full interaction support. The component receives a Todo object and callback props (onToggle, onDelete, onEdit). It renders a checkbox (shadcn/ui Checkbox) for toggling completion, the todo text, and a delete button. Completed todos display with strikethrough text and muted styling and are not editable. Double-clicking the text of an incomplete todo enters edit mode with the current text in an input field. In edit mode: pressing Enter saves the edited text via onEdit, pressing Escape cancels and reverts, clicking outside (blur) cancels the edit, and submitting empty text calls onDelete to remove the todo.\n\nSource: internal/specs/todo-app-SPEC.md Sections 5.2, 5.3, 5.4",
+  "acceptance_criteria": {
+    "functional": [
+      "Checkbox toggles completion status via onToggle callback",
+      "Completed todos display with strikethrough text and muted styling",
+      "Delete button is visible and removes the todo via onDelete callback",
+      "Double-clicking todo text enters edit mode with current text in an input",
+      "Pressing Enter in edit mode saves the edited text via onEdit",
+      "Pressing Escape in edit mode cancels and reverts to original text",
+      "Clicking outside (blur) in edit mode cancels the edit"
+    ],
+    "edge_cases": [
+      "Submitting empty text in edit mode deletes the todo",
+      "Double-clicking a completed todo does not enter edit mode",
+      "Rapid successive deletes process independently"
+    ],
+    "error_handling": [],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "component", "target": "Checkbox toggles completion state" },
+    { "type": "component", "target": "Delete button calls onDelete" },
+    { "type": "component", "target": "Double-click enters edit mode" },
+    { "type": "component", "target": "Enter saves edit, Escape cancels edit, blur cancels edit" },
+    { "type": "component", "target": "Empty edit text triggers deletion" },
+    { "type": "component", "target": "Completed todos show strikethrough and block edit mode" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-002"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "critical",
+    "complexity": "L",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:todo-item:ui:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "Todo Item (Toggle, Delete, Inline Edit)",
+    "source_section": "5.2, 5.3, 5.4",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery",
+    "produces_for": ["task-006"]
+  }
+}

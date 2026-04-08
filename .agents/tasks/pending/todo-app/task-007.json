@@ -1,0 +1,48 @@
+{
+  "id": "task-007",
+  "title": "Build TodoFooter component with count, filters, clear completed, and toggle all",
+  "active_form": "Building TodoFooter component with count, filters, clear completed, and toggle all",
+  "description": "Create the TodoFooter component that provides status information and bulk actions. It displays the active (incomplete) todo count with correct pluralization ('{n} item left' / '{n} items left'). It renders three filter buttons (All, Active, Completed) with the active filter visually highlighted, calling onFilterChange when clicked. A 'Clear completed' button is visible only when at least one completed todo exists, calling onClearCompleted when clicked. A 'toggle all' control (chevron or checkbox) is visible when todos exist — clicking it calls onToggleAll. The footer should be hidden when no todos exist.\n\nSource: internal/specs/todo-app-SPEC.md Sections 5.5, 5.6, 5.7, 5.8",
+  "acceptance_criteria": {
+    "functional": [
+      "Active count displays with correct pluralization ('{n} item left' vs '{n} items left')",
+      "Count updates in real-time as todos are added, deleted, or toggled",
+      "Three filter buttons (All, Active, Completed) are visible",
+      "Active filter button is visually highlighted",
+      "Clicking a filter button calls onFilterChange with the filter value",
+      "'Clear completed' button visible only when completed todos exist",
+      "'Clear completed' button calls onClearCompleted when clicked",
+      "Toggle all control visible when todos exist",
+      "Toggle all calls onToggleAll when clicked"
+    ],
+    "edge_cases": [
+      "Footer hidden when no todos exist",
+      "'Clear completed' button hidden when no completed todos",
+      "Count shows 0 when all todos are completed"
+    ],
+    "error_handling": [],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "component", "target": "Active count displays with correct pluralization" },
+    { "type": "component", "target": "Filter buttons render and highlight active filter" },
+    { "type": "component", "target": "Clear completed button visibility toggles based on completed todos" },
+    { "type": "component", "target": "Toggle all control calls onToggleAll" },
+    { "type": "component", "target": "Footer hidden when no todos exist" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-001"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "high",
+    "complexity": "M",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:todo-footer:ui:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "Todo Footer (Count, Filters, Clear Completed, Toggle All)",
+    "source_section": "5.5, 5.6, 5.7, 5.8",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery"
+  }
+}

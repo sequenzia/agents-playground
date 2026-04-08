@@ -1,0 +1,42 @@
+{
+  "id": "task-008",
+  "title": "Integrate shadcn/ui toast notifications",
+  "active_form": "Integrating shadcn/ui toast notifications",
+  "description": "Set up the shadcn/ui toast (sonner) system and create a useToast integration or use the shadcn/ui toast API directly. Toast notifications should appear for: todo deletion, clear completed (with count, e.g. 'Cleared 3 completed todos'), toggle all, and localStorage failure warnings. Toasts auto-dismiss after 3 seconds, are non-blocking, and positioned unobtrusively (e.g., bottom-right). Export a toast trigger function or hook that other components can call.\n\nSource: internal/specs/todo-app-SPEC.md Section 5.9",
+  "acceptance_criteria": {
+    "functional": [
+      "Toast appears for todo deletion",
+      "Toast appears for clear completed with count (e.g., 'Cleared 3 completed todos')",
+      "Toast appears for toggle all action",
+      "Toast appears for localStorage failure with warning message",
+      "Toast auto-dismisses after approximately 3 seconds",
+      "Toast is non-blocking and positioned unobtrusively"
+    ],
+    "edge_cases": [
+      "Multiple rapid actions show multiple toasts without collision"
+    ],
+    "error_handling": [
+      "localStorage failure toast warns that data may not persist"
+    ],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "component", "target": "Toast renders with correct message for each trigger type" },
+    { "type": "component", "target": "Toast auto-dismisses after duration" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-001"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "medium",
+    "complexity": "S",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:toast-notifications:ui:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "Toast Notifications",
+    "source_section": "5.9",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery"
+  }
+}

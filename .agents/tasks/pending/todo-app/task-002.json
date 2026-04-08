@@ -1,0 +1,46 @@
+{
+  "id": "task-002",
+  "title": "Define Todo type and implement todoReducer",
+  "active_form": "Defining Todo type and implementing todoReducer",
+  "description": "Create the Todo TypeScript interface with fields: id (string), text (string), completed (boolean). Implement the todoReducer function that handles all action types: ADD (creates new todo with unique id and completed: false), DELETE (removes todo by id), TOGGLE (flips completed status), EDIT (updates text by id), CLEAR_COMPLETED (removes all completed todos), and TOGGLE_ALL (marks all complete if any incomplete, or all incomplete if all complete). Define the TodoAction discriminated union type for type-safe dispatch.\n\nSource: internal/specs/todo-app-SPEC.md Sections 7.4, 13.3",
+  "acceptance_criteria": {
+    "functional": [
+      "Todo interface defined with id, text, and completed fields",
+      "TodoAction union type covers ADD, DELETE, TOGGLE, EDIT, CLEAR_COMPLETED, TOGGLE_ALL",
+      "ADD action creates a new todo with a unique id and completed: false",
+      "DELETE action removes the todo matching the given id",
+      "TOGGLE action flips the completed boolean for the given id",
+      "EDIT action updates the text for the given id",
+      "CLEAR_COMPLETED action removes all todos where completed is true",
+      "TOGGLE_ALL sets all to complete if any are incomplete, or all to incomplete if all are complete"
+    ],
+    "edge_cases": [
+      "ADD with whitespace-only text is handled by the caller, not the reducer",
+      "DELETE/TOGGLE/EDIT with non-existent id returns state unchanged",
+      "CLEAR_COMPLETED on empty list returns empty list",
+      "TOGGLE_ALL on empty list returns empty list"
+    ],
+    "error_handling": [],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "unit", "target": "Each reducer action type produces correct state transformation" },
+    { "type": "unit", "target": "Edge cases return state unchanged when appropriate" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-001"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "critical",
+    "complexity": "M",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:core-data-model:reducer:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "Core Data Model",
+    "source_section": "7.4, 13.3",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery",
+    "produces_for": ["task-003", "task-005", "task-010"]
+  }
+}

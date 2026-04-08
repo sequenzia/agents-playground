@@ -1,0 +1,48 @@
+{
+  "id": "task-011",
+  "title": "Add unit tests for useTodos hook",
+  "active_form": "Adding unit tests for useTodos hook",
+  "description": "Write Vitest + React Testing Library tests for the useTodos custom hook. Use renderHook to test the hook in isolation. Verify that the hook initializes from localStorage, that each action function (addTodo, deleteTodo, toggleTodo, editTodo, clearCompleted, toggleAll) correctly updates the todos state, and that state changes are synced back to localStorage. Test error handling by mocking localStorage to throw — verify the hook falls back to in-memory state and surfaces the error.\n\nSource: internal/specs/todo-app-SPEC.md Section 3.2, 9.1",
+  "acceptance_criteria": {
+    "functional": [
+      "Hook initializes with empty array when localStorage is empty",
+      "Hook initializes with persisted todos when localStorage has data",
+      "addTodo adds a new todo to the state",
+      "deleteTodo removes a todo by id",
+      "toggleTodo flips completed status",
+      "editTodo updates text for a given id",
+      "clearCompleted removes all completed todos",
+      "toggleAll sets all complete or all incomplete",
+      "State changes sync to localStorage"
+    ],
+    "edge_cases": [
+      "Invalid JSON in localStorage triggers fallback to empty array",
+      "localStorage unavailable triggers error callback"
+    ],
+    "error_handling": [
+      "localStorage write failure is handled gracefully"
+    ],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "unit", "target": "Hook initializes from localStorage" },
+    { "type": "unit", "target": "Each action function updates state correctly" },
+    { "type": "unit", "target": "State syncs to localStorage after each action" },
+    { "type": "unit", "target": "localStorage errors trigger graceful fallback" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-003"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "high",
+    "complexity": "M",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:state-management:test:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "State Management Testing",
+    "source_section": "3.2, 9.1",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery"
+  }
+}

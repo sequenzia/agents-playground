@@ -1,0 +1,43 @@
+{
+  "id": "task-004",
+  "title": "Build TodoInput component",
+  "active_form": "Building TodoInput component",
+  "description": "Create the TodoInput component that provides a text input field for adding new todos. The input should be visible at the top of the app. Pressing Enter or clicking a submit button calls the onAdd callback with the trimmed text. After successful submission, the input field clears. Empty or whitespace-only input is rejected — no submission occurs. Use shadcn/ui Input and Button components styled with Tailwind CSS.\n\nSource: internal/specs/todo-app-SPEC.md Section 5.1",
+  "acceptance_criteria": {
+    "functional": [
+      "Text input field is visible at the top of the app",
+      "Pressing Enter submits the todo text",
+      "Clicking the submit button submits the todo text",
+      "Input field clears after successful submission",
+      "onAdd callback receives the trimmed text value"
+    ],
+    "edge_cases": [
+      "Empty input does not trigger submission",
+      "Whitespace-only input does not trigger submission",
+      "Very long text remains usable in the input field"
+    ],
+    "error_handling": [],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "component", "target": "Input renders and accepts text" },
+    { "type": "component", "target": "Enter key triggers submission with trimmed text" },
+    { "type": "component", "target": "Empty/whitespace input is rejected" },
+    { "type": "component", "target": "Input clears after successful submission" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-001"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "critical",
+    "complexity": "S",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:add-todo:ui:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "Add Todo",
+    "source_section": "5.1",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery"
+  }
+}

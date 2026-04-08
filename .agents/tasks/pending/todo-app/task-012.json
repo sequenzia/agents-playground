@@ -1,0 +1,43 @@
+{
+  "id": "task-012",
+  "title": "Add component tests for TodoInput, TodoItem, TodoList, and TodoFooter",
+  "active_form": "Adding component tests for TodoInput, TodoItem, TodoList, and TodoFooter",
+  "description": "Write Vitest + React Testing Library component tests for all UI components. Test TodoInput: submission via Enter and button, empty/whitespace rejection, input clearing. Test TodoItem: checkbox toggle, delete button, double-click edit mode, Enter/Escape/blur behavior in edit mode, completed todo styling and edit blocking, empty edit deletion. Test TodoList: filtering (all/active/completed), empty state rendering. Test TodoFooter: active count pluralization, filter button highlighting, clear completed visibility, toggle all behavior, footer visibility.\n\nSource: internal/specs/todo-app-SPEC.md Section 3.2, 9.1",
+  "acceptance_criteria": {
+    "functional": [
+      "TodoInput tests: Enter submission, button submission, input clearing",
+      "TodoItem tests: checkbox toggle, delete button, inline editing lifecycle",
+      "TodoList tests: renders filtered todos, empty state",
+      "TodoFooter tests: count display, filter buttons, clear completed, toggle all"
+    ],
+    "edge_cases": [
+      "TodoInput: whitespace-only input rejection",
+      "TodoItem: empty edit text triggers deletion",
+      "TodoItem: completed todo blocks edit mode",
+      "TodoFooter: clear completed button hidden when no completed todos"
+    ],
+    "error_handling": [],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "component", "target": "TodoInput submission and validation behavior" },
+    { "type": "component", "target": "TodoItem toggle, delete, and full inline editing lifecycle" },
+    { "type": "component", "target": "TodoList filtering and empty state" },
+    { "type": "component", "target": "TodoFooter count, filters, clear completed, and toggle all" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-009"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "high",
+    "complexity": "L",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:ui-components:test:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "UI Component Testing",
+    "source_section": "3.2, 9.1",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery"
+  }
+}

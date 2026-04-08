@@ -1,0 +1,48 @@
+{
+  "id": "task-010",
+  "title": "Add unit tests for todoReducer",
+  "active_form": "Adding unit tests for todoReducer",
+  "description": "Write comprehensive Vitest unit tests for the todoReducer function. Test every action type (ADD, DELETE, TOGGLE, EDIT, CLEAR_COMPLETED, TOGGLE_ALL) with both happy path and edge case scenarios. Verify immutability — the reducer should return new state objects, not mutate the input. Test that ADD generates unique IDs, DELETE/TOGGLE/EDIT with non-existent IDs return unchanged state, CLEAR_COMPLETED on an empty list returns empty, and TOGGLE_ALL handles empty lists, all-complete, all-incomplete, and mixed states.\n\nSource: internal/specs/todo-app-SPEC.md Section 3.2, 9.1",
+  "acceptance_criteria": {
+    "functional": [
+      "All six action types have at least one happy-path test",
+      "ADD test verifies new todo has unique id, correct text, and completed: false",
+      "DELETE test verifies todo is removed from state",
+      "TOGGLE test verifies completed boolean flips",
+      "EDIT test verifies text is updated for correct id",
+      "CLEAR_COMPLETED test verifies only completed todos are removed",
+      "TOGGLE_ALL test verifies correct behavior for mixed, all-complete, and all-incomplete states"
+    ],
+    "edge_cases": [
+      "DELETE/TOGGLE/EDIT with non-existent id returns state unchanged",
+      "CLEAR_COMPLETED and TOGGLE_ALL on empty array return empty array",
+      "Reducer returns new state object (immutability)"
+    ],
+    "error_handling": [],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "unit", "target": "ADD action creates todo with unique id, text, and completed: false" },
+    { "type": "unit", "target": "DELETE action removes todo by id" },
+    { "type": "unit", "target": "TOGGLE action flips completed status" },
+    { "type": "unit", "target": "EDIT action updates text for given id" },
+    { "type": "unit", "target": "CLEAR_COMPLETED removes all completed todos" },
+    { "type": "unit", "target": "TOGGLE_ALL handles mixed, all-complete, all-incomplete, and empty states" },
+    { "type": "unit", "target": "Reducer returns new state object (immutability)" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-002"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "high",
+    "complexity": "M",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:core-data-model:test:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "Core Data Model Testing",
+    "source_section": "3.2, 9.1",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery"
+  }
+}

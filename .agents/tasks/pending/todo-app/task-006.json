@@ -1,0 +1,41 @@
+{
+  "id": "task-006",
+  "title": "Build TodoList component with filtering",
+  "active_form": "Building TodoList component with filtering",
+  "description": "Create the TodoList component that renders a filtered list of TodoItem components. The component receives the full todos array, the current filter state ('all' | 'active' | 'completed'), and action callbacks (onToggle, onDelete, onEdit). It filters the todos based on the active filter before rendering. When no todos match the current filter, it displays an appropriate empty state. The list should render each todo using the TodoItem component.\n\nSource: internal/specs/todo-app-SPEC.md Section 5.5",
+  "acceptance_criteria": {
+    "functional": [
+      "'All' filter shows all todos regardless of status",
+      "'Active' filter shows only todos where completed is false",
+      "'Completed' filter shows only todos where completed is true",
+      "Each todo renders as a TodoItem with correct props"
+    ],
+    "edge_cases": [
+      "Empty list displays empty state gracefully",
+      "No matching todos for current filter shows empty state",
+      "Deleting the last todo shows empty state"
+    ],
+    "error_handling": [],
+    "performance": []
+  },
+  "testing_requirements": [
+    { "type": "component", "target": "Renders correct todos for each filter state" },
+    { "type": "component", "target": "Empty state renders when no todos match" },
+    { "type": "component", "target": "Passes correct callbacks to TodoItem" }
+  ],
+  "status": "pending",
+  "blocked_by": ["task-005"],
+  "created_at": "2026-04-08T23:19:38Z",
+  "updated_at": "2026-04-08T23:19:38Z",
+  "metadata": {
+    "priority": "high",
+    "complexity": "S",
+    "task_group": "todo-app",
+    "task_uid": "internal/specs/todo-app-SPEC.md:filter-by-status:ui:001",
+    "spec_path": "internal/specs/todo-app-SPEC.md",
+    "feature_name": "Filter by Status",
+    "source_section": "5.5",
+    "spec_phase": 1,
+    "spec_phase_name": "Complete Build — Single Delivery"
+  }
+}
